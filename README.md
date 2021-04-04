@@ -20,7 +20,9 @@ Dicas:
 * Suas classes e atributos podem ser em português ou em inglês, não se apegue a isso, queremos um bom resultado final. 
 * Não queremos um manual de programação e sim um post explicando como você faria a implementação da API passo a passo. 
 
-Mais do que respostas certas, queremos ver o quão nerd você consegue ser e o que considera relevante. O importante é mostrar que consegue aprender, se fazer entender e ainda transmitir conhecimento.   Se ficou fácil, te desafiamos a:   * Construir a aplicação sem utilizar Lombok;   * Substituir o e-mail do usuário na tabela de vacinação para uma chave estrangeira associada ao id do usuário.
+Mais do que respostas certas, queremos ver o quão nerd você consegue ser e o que considera relevante. O importante é mostrar que consegue aprender, se fazer entender e ainda transmitir conhecimento.   Se ficou fácil, te desafiamos a:
+* Construir a aplicação sem utilizar Lombok; 
+* Substituir o e-mail do usuário na tabela de vacinação para uma chave estrangeira associada ao id do usuário.
 
 Foi um otimo desafio para mim, aprendi bastante durante todo o procedimento de criação desta API.
 Para testagem da aplicação, é necessario a edição da pagina "Application.properties" e criação de um Schema no seu banco de dados.
