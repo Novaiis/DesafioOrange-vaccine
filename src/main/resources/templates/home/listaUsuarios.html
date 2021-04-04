@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Desafio OrangeTalents</title>
+<meta name="author" content="Lucas Novais"/>
+</head>
+<body>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+		<header>
+			<table class="table" th:fragment="table2">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">Nome Completo</th>
+		      <th scope="col">E-mail</th>
+		      <th scope="col">CPF</th>
+		      <th scope="col">Data de nascimento</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr scope="row" th:each="usuarios : ${usuariosList}">
+		      <td th:text="${usuarios.nome}"></td>
+		      <td th:text="${usuarios.email}"></td>
+		      <td th:text="${usuarios.cpf}"></td>
+		      <td th:text="${usuarios.nascimento}"></td>
+		    </tr>
+		  </tbody>
+		</table>
+		
+	
+	</header>
+
+</body>
+</html>

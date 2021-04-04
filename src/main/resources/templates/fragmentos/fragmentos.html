@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<title>Desafio OrangeTalents</title>
+<meta name="author" content="Lucas Novais"/>
+</head>
+<body>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+	
+<!-- Cabeçalho -->
+	<!-- FRAGMENTO DA PAGINA  DE CADASTRO USUARIOS -->
+	
+	 	<header th:fragment="cabecalho">
+ 		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #795548">
+ 			<a class="navbar-brand" th:href="@{/}">Desafio OrangeTalents</a>
+ 			
+ 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+ 			
+ 				<span class="navbar-toggler-icon"></span>
+ 			
+ 			</button>
+ 			
+ 			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
+ 			
+ 				<a class="nav-item nav-link" th:href="@{/}">Cadastro de usuários</a>
+ 				<a class="nav-item nav-link" th:href="@{/vacinas}">Cadastro de vacinas</a>
+ 				
+ 			
+ 			</div>
+ 		</nav>
+ 		<h1>Cadastro de usuários</h1>
+		<form method="post" action="/CadastrarUsuarios" th:object="${usuarios}">
+		
+		  <div class="form-group">
+		    <label >Nome Completo</label>
+		    <input type="text" class="form-control" placeholder="Digite seu nome" th:field="*{nome}">
+		    <small class="form-text text-muted">Digite seu nome completo.</small>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label >Digite seu e-mail</label>
+		    <input type="email" class="form-control"  placeholder="E-mail" th:field="*{email}">
+		  </div>
+		  
+		   <div class="form-group">
+		    <label >Digite seu CPF</label>
+		    <input type="number" class="form-control" placeholder="CPF" th:field="*{cpf}">
+		    <small class="form-text text-muted">Apenas CPF válidos!</small>
+		  </div>
+		  
+		  
+		  <label class="form-group" for="Nome">Nascimento<h11>*</h11></label>
+		    <div>
+  			<input class="form-control input-md" type="date" maxlength="10" th:field="*{nascimento}">
+		</div>
+		  
+		  <br>
+		  <button type="submit" class="btn btn-primary">Enviar</button>
+		  
+		  <br><br>
+		</form>
+
+		
+
+ 	</header>
+	
+ 	<header th:fragment="vacina">
+ 		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #795548">
+ 			<a class="navbar-brand" th:href="@{/}">Desafio OrangeTalents</a>
+ 			
+ 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+ 			
+ 				<span class="navbar-toggler-icon"></span>
+ 			
+ 			</button>
+ 			
+ 			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
+ 			
+ 				<a class="nav-item nav-link" th:href="@{/}">Cadastro de usuários</a>
+ 				<a class="nav-item nav-link" th:href="@{/vacinas}">Cadastro de vacinas</a>
+ 				
+ 			
+ 			</div>
+ 		
+ 		</nav>
+ 		<!-- FRAGMENTO DA PAGINA  DE VACINAS -->
+ 		<h1>Cadastro de vacinas</h1>
+<form method="post" action="/CadastrarVacinas" th:object="${vacinas}">
+
+  <div class="form-group">
+  	<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nomeVacina')}">
+	<label class="validation-message" th:errors="*{nomeVacina}"></label>
+	</div>
+    <label >Nome da vacina</label>
+    <input type="text" class="form-control" placeholder="Nome vacina" th:field="*{nomeVacina}">
+    <small class="form-text text-muted">Digite o nome da vacina.</small>
+  </div>
+  
+  <div class="form-group">
+    <label >Digite o e-mail do usuario</label>
+    <input type="email" class="form-control" placeholder="E-mail" th:field="*{email}">
+  </div>
+  
+  <div class="form-group">
+    <label >Data da realização da vacina</label>
+    <input type="date" class="form-control" th:field="*{dataRealizacao}">
+  </div>  
+  
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  <br><br>
+  
+
+</form>
+ 	</header>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
+	
